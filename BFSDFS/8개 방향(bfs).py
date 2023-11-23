@@ -28,6 +28,7 @@ class Solution:
             if cur_r == row_len - 1 and cur_c == col_len - 1:
                 shortest_dist = cur_dist
                 break
+
             for dr, dc in directions:
                 next_r = cur_r + dr
                 next_c = cur_c + dc
