@@ -1,4 +1,4 @@
-memo = {}
+memo = {}  # memo에 저장함으로써 재사용
 
 
 def cs(n):
@@ -8,6 +8,6 @@ def cs(n):
         return 2
 
     if n not in memo:
-        memo[n] = cs(n-1) + cs(n-2)
+        memo[n] = cs(n-1) + cs(n-2)  # 재귀를 이용
 
     return memo[n]
