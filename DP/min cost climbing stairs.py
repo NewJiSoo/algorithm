@@ -28,10 +28,9 @@ def dp(n):
 
     return memo[n]
 
+
 # 3. DP(bottom-up)
 #   시간 복잡도 O(n) => O(10**3)
-
-
 def dp(n):
     memo = [-1]*n  # 배열 초기화
     memo[0] = 0
