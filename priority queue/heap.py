@@ -3,7 +3,7 @@ import heapq
 foo = [5, 3, 9, 4, 1, 2, 6]
 
 # min heap
-heapq.heapify(foo)  # 정렬 O(N)
+heapq.heapify(foo)  # 정렬 O(N) -> 이때 리스트 전체가 정렬되는게 아닌 최소값만 제일 앞에 오게되는 것
 heapq.heappop(foo)  # dequeue O(logN)
 heapq.heappush(foo, 1)  # enqueue O(logN)
 
