@@ -4,10 +4,10 @@ import heapq
 def dijkstra(graph, start, final):
     costs = {}  # 비용 덱, {노드:최소 비용의 합}
     pq = []  # 우선순위 큐 리스트
-    heapq.heappush(pq, (0, start)) # 시작 노드, 비용 넣기
+    heapq.heappush(pq, (0, start))  # 시작 노드, 비용 넣기
 
     while pq:
-        cur_cost, cur_v = heapq.heappop(pq) # pq리스트에 가장 우선순위가 높은 비용, 노드 꺼내기
+        cur_cost, cur_v = heapq.heappop(pq)  # pq리스트에 가장 우선순위가 높은 비용, 노드 꺼내기
         if cur_v not in costs:  # 방문한 적이 없다면 = 최소 비용의 합을 저장한 적이 없다면
             costs[cur_v] = cur_cost  # 노드에 최소비용 저장
             for cost, next_v in graph[cur_v]:  # 현재 노드와 이어진 다음 노드들 꺼내서 pq에 넣기
@@ -24,7 +24,7 @@ graph = {
     3: [(4, 6)],
     4: [(3, 3), (5, 7)],
     5: [(1, 8)],
-    ...
+    # ...
 }
 
 dijkstra(graph, 1, 8)  # 시작: 1, 도착 : 8
