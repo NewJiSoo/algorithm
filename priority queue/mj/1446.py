@@ -23,7 +23,7 @@ for i in range(N):
     # 3: [(4, 1)], ... }
 
 INF = int(1e9)
-distance = [INF] * (D+1)  # 추가할 거리를
+distance = [INF] * (D+1)  # 추가할 거리배열 초기화
 distance[0] = 0
 
 pq = []
