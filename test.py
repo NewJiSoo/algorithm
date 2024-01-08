@@ -1,3 +1,7 @@
+#
+# 메모리 :  KB, 시간 :  ms
+
+
 import heapq
 
 N = 5
