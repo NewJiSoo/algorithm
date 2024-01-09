@@ -34,3 +34,7 @@ print([[i] * (4) for i in range(8)])
  [5, 5, 5, 5],
  [6, 6, 6, 6],
  [7, 7, 7, 7]]
+
+ra = 0
+if ra:
+    print('true')
