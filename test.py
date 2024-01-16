@@ -38,3 +38,6 @@ print([[i] * (4) for i in range(8)])
 ra = 0
 if ra:
     print('true')
+
+str_list = list(str(input()))
+print(str_list)
