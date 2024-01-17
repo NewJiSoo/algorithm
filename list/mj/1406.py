@@ -1,79 +1,67 @@
+# https://www.acmicpc.net/problem/1406
+# 메모리 : 97676 KB, 시간 : 1140 ms
+# 참고 코드 : https://www.acmicpc.net/source/71293355
+
 import sys
+input = sys.stdin.readline
 
 
-class Node():
-    def __init__(self, data, prev=None, next=None):
-        self.data = data
-        self.prev = prev
-        self.next = next
+class DList:
+    class Node:
+        def __init__(self, item, prev=None, next=None):
+            self.item = item
+            self.prev = prev
+            self.next = next
 
-
-class Editor():
     def __init__(self):
-        self.head = Node('head', None, None)
-        self.tail = Node('tail', self.head, None)
+        self.head = self.Node(None)
+        self.tail = self.Node(None, self.head)
         self.head.next = self.tail
         self.cur = self.tail
 
-    def init_insert(self, p, data):
+    def insert(self, p, item):
         t = p.prev
-        new_node = Node(data, t, p)
-        p.prev = new_node
-        t.next = new_node
+        n = self.Node(item, t, p)
+        p.prev = n
+        t.next = n
 
-    def cursorB(self):
-        if self.cur.prev != self.head:
-            if self.cur == self.tail:
-                f = self.cur.prev
-                f.prev.next = f.next
-                self.tail.prev = f.prev
+    def delete(self, x):
+        f = x.prev
+        r = x.next
+        f.next = r
+        r.prev = f
+
+    def print_list(self):
+        p = self.head.next
+        while p != self.tail:
+            if p.next != self.tail:
+                print(p.item, end="")
             else:
-                f = self.cur.prev.prev
-                r = self.cur
-                f.next = r
-                r.prev = f
-
-    def add_left(self, data):
-        if self.cur == self.tail:
-            f = self.cur.prev
-            new_node = Node(data, f, self.tail)
-            f.next = new_node
-            self.tail.prev = new_node
-            self.cur = self.tail
-        else:
-            f = self.cur.prev
-            r = self.cur
-            new_node = Node(data, f, r)
-            f.next = new_node
-            r.prev = new_node
-
-    def print(self):
-        curr_node = self.head.next
-        while curr_node != self.tail:
-            print(curr_node.data, end="")
-            curr_node = curr_node.next
-        print()
+                print(p.item)
+            p = p.next
 
 
-list_input = sys.stdin.readline().strip()
-ll = Editor()
+w = sys.stdin.readline().strip()
+n = int(sys.stdin.readline().strip())
 
-for char in list_input:
-    ll.init_insert(ll.tail, char)
+linked_list = DList()
+for s in w:
+    linked_list.insert(linked_list.tail, s)
 
-num_operations = int(sys.stdin.readline())
 
-for _ in range(num_operations):
-    operation = sys.stdin.readline().strip()
-    if operation[0] == 'P':
-        ll.add_left(operation[2])
-    elif operation[0] == 'L':
-        if ll.cur.prev != ll.head:
-            ll.cur = ll.cur.prev
-    elif operation[0] == 'D':
-        if ll.cur != ll.tail:
-            ll.cur = ll.cur.next
-    elif operation[0] == 'B':
-        ll.cursorB()
+for _ in range(n):
+    c = sys.stdin.readline().strip().split()
+    if (c[0] == 'P'):
+        linked_list.insert(linked_list.cur, c[1])
+    elif (c[0] == 'L'):
+        if (linked_list.cur.prev.prev != None):
+            linked_list.cur = linked_list.cur.prev
+    elif (c[0] == 'D'):
+        if (linked_list.cur.next != None):
+            linked_list.cur = linked_list.cur.next
+    elif (c[0] == 'B'):
+        if (linked_list.cur.prev.prev != None):
+            linked_list.delete(linked_list.cur.prev)
 
-ll.print()
+
+linked_list.print_list()

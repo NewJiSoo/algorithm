@@ -39,5 +39,5 @@ ra = 0
 if ra:
     print('true')
 
-str_list = list(str(input()))
-print(str_list)
+str_list = input()
+print(str_list[0])
