@@ -5,8 +5,6 @@
 
 N, M = map(int, input().split())
 
-ans = []
-
 
 def backtrack(curr):
     if len(curr) == M:

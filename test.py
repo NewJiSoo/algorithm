@@ -39,5 +39,6 @@ ra = 0
 if ra:
     print('true')
 
-str_list = input()
-print(str_list[0])
+str_list = input().split()
+print(str_list)
+print(str_list[1])
