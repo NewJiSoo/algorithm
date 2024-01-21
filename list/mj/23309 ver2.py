@@ -1,5 +1,5 @@
 # https://www.acmicpc.net/problem/23309
-# 메모리 : 208624 KB, 시간 : 1632 ms
+# 메모리 : 208624 KB, 시간 : 1632 ms, pypy
 # 참고코드 : https://www.acmicpc.net/source/65939710
 
 import sys
