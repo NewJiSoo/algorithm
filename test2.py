@@ -1,8 +1,5 @@
-stack = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+import bisect
 
-print(stack[-4:])
-
-
-friend = {'f': [5, 8], 'd': 3}
-
-print(max(friend.values()))
+seq = [1, 3, 3.5, 5, 7, 9]
+bisect.insort_left(seq, 4)
+print(seq)
