@@ -1,5 +1,7 @@
-import bisect
+import sys
 
-seq = [1, 3, 3.5, 5, 7, 9]
-bisect.insort_left(seq, 4)
-print(seq)
+line = sys.stdin.readline()
+print("입력한 줄:", line)
+
+line = sys.stdin.readline().strip()
+print("입력한 줄:", line)
