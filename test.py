@@ -1,44 +1,10 @@
-#
-# 메모리 :  KB, 시간 :  ms
+def factorial(n):
+    if n == 1:
+        return 1
+    return n*factorial(n-1)
 
 
-import heapq
-
-N = 5
-M = 4
-
-cabbage = [[0] * N for _ in range(M)]
-print(cabbage)
-
-
-dec = [3, 5, 9, 15, -1]
-print(heapq.heappop(dec))
-
-graph = {
-    # 1번 노드와 연결된 노드 : 2, 4번, 2번 노드로 가는 비용 : 2, 4번 노드로 가는 비용 : 1
-    1: [(2, 2), (1, 4)],
-    2: [(1, 3), (9, 5), (6, 6)],
-    3: [(4, 6)],
-    4: [(3, 3), (5, 7)],
-    5: [(1, 8)],
-    6: []
-    # ...
-}
-
-print([[i] * (4) for i in range(8)])
-[[0, 0, 0, 0],
- [1, 1, 1, 1],
- [2, 2, 2, 2],
- [3, 3, 3, 3],
- [4, 4, 4, 4],
- [5, 5, 5, 5],
- [6, 6, 6, 6],
- [7, 7, 7, 7]]
-
-ra = 0
-if ra:
-    print('true')
-
-str_list = input().split()
-print(str_list)
-print(str_list[1])
+def fibo(n):
+    if n == 1 or 2:
+        return 1
+    return fibo(n-1) + fibo(n-2)
