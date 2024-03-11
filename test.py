@@ -1,3 +1,5 @@
+# 메모리 :  KB, 시간 :  ms
+
 def factorial(n):
     if n == 1:
         return 1
