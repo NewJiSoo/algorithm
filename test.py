@@ -11,5 +11,5 @@
 #         return 1
 #     return fibo(n-1) + fibo(n-2)
 
-row = list(map(int, input()))
-print(row)
+# row = list(map(int, input()))
+# print(row)
