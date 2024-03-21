@@ -1,2 +1,1 @@
-k = "1234"
-print(len(k))
+print(ord("a"))
