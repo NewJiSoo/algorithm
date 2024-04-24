@@ -5,7 +5,6 @@ def solution(numbers, target):
                 return 1
             else:
                 return 0
-
         else:
             return dfs(idx+1, total + numbers[idx]) + dfs(idx+1, total - numbers[idx])
     answer = dfs(0, 0)

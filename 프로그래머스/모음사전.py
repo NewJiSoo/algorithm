@@ -1,32 +1,30 @@
-alpha = ['A', 'E', 'I', 'O', 'U']
-answer = 0
- now = []
-  count = 0  # 마지막 5번째 자리에서 바뀌는 값
+def solution(word):
+    alpha = ['A', 'E', 'I', 'O', 'U']
+    answer = 0
+    arr = []
+    count = 0  # 마지막 5번째 자리에서 바뀌는 값
 
-   while 1:
-
-        if "".join(now) == word:
+    while 1:
+        if "".join(arr) == word:
             break
 
         answer += 1
-
-        if len(now) != 5:
+        if len(arr) != 5:
             count = 0
-            now.append('A')
+            arr.append('A')
 
-        elif len(now) == 5 and now[-1] == 'U':
+        elif len(arr) == 5 and arr[-1] == 'U':
+            while arr[-1] == 'U':
+                arr.pop()
 
-            while now[-1] == 'U':
-                now.pop()
-
-            if alpha.index(now[-1])+1 <= 4:
+            if alpha.index(arr[-1])+1 <= 4:
                 # U를 모두삭제하고 마지막 값을 다음 값으로 변경한다
-                now[-1] = alpha[alpha.index(now[-1])+1]
+                arr[-1] = alpha[alpha.index(arr[-1])+1]
             else:
-                now[-1] = alpha[0]
+                arr[-1] = alpha[0]
 
-        elif len(now) == 5:
+        elif len(arr) == 5:
             count += 1
-            now[4] = alpha[count]
+            arr[4] = alpha[count]
 
     return answer
