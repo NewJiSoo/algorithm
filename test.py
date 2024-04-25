@@ -1,7 +1,11 @@
-arr = []
-for idx, item in enumerate([2, 1, 3, 2]):
-    arr.append((idx, item))
+def change(n, k):
+    tenary = ''
+    while n != 0:
+        remain = n % k
+        tenary = str(remain) + tenary
+        n //= k
+    return tenary
 
-arr = sorted(arr, key=lambda x: x[1])
 
-print(list('word') == ['w', 'o', 'r'])
+tenary = 'qwe'
+print(len(tenary))
